@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Mastery</title>
+    <link rel="stylesheet" href="./assets/style.css" type="text/css" />
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.7/vue.global.js" integrity="sha512-+i5dAv2T8IUOP7oRl2iqlAErpjtBOkNtREnW/Te+4VgQ52h4tAY5biFFQJmF03jVDWU4R7l47BwV8H6qQ+/MfA==" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <div id="app">
+        <div class="nav-bar"></div>
+
+        <!-- <div class="cart">
+            Cart({{cart}})
+            <div><button style="display:inline;" v-on:click="removeCart" v-show="cart != 0">delete</button></div>
+        </div> -->
+        <cart-display :cart="cart" @remove-cart="removeCart"></cart-display>
+        
+        <product-display :premium="premium" @add-to-cart="updateCart"></product-display>
+      </div>
+
+    <!--Import App-->
+    <script src="main.js"></script>
+
+    <!--Import Components-->
+    <script src="./components/ProductDisplay.js"></script>
+    <script src="./components/ProductDetails.js"></script>
+    <script src="./components/Cart.js"></script>
+    <script src="./components/ReviewForm.js"></script>
+    <script src="./components/ReviewList.js"></script>
+
+    <!-- Mount App-->
+    <script>
+        const mountedApp = app.mount('#app');
+    </script>
+</body>
+</html>
